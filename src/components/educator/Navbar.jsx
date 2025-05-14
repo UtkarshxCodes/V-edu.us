@@ -17,6 +17,8 @@ const Navbar = ({ bgColor }) => {
       <div className="flex items-center gap-5 text-gray-500 relative">
         <p>Hi! {user.fullName}</p>
         <UserButton />
+        <Link to="/about">About Us</Link>
+        <Link to="/contact">Contact Us</Link>
       </div>
     </div>
   );

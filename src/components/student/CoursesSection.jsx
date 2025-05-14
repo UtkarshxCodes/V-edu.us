@@ -2,36 +2,22 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import CourseCard from './CourseCard';
 import { Link } from 'react-router-dom';
-import { assets } from '../../assets/assets'; // Import assets
+import { assets } from '../../assets/assets';
 
 const CoursesSection = () => {
   const { allCourses } = useContext(AppContext);
 
   return (
     <div className="relative">
-      {/* Video Background Container */}
-      <div className="absolute inset-0 z-0">
-        <video
-          className="w-auto h-auto min-w-full min-h-full object-contain"
-          src={assets.videolms}
-          autoPlay
-          loop
-          muted
-          playsInline
-        ></video>
-      </div>
-
-      <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
-
       {/* Content Section */}
       <div className="relative py-16 md:px-40 px-8 text-center bg-cover bg-center overflow-hidden z-20">
         {/* Heading */}
-        <h2 className="text-4xl md:text-6xl font-bold text-white">
+        <h2 className="text-4xl md:text-6xl font-bold text-blue-700">
           Learn from the best
         </h2>
 
         {/* Subheading */}
-        <p className="md:text-base text-sm text-white mt-3 max-w-3xl mx-auto">
+        <p className="md:text-base text-sm text-black mt-3 max-w-3xl mx-auto">
           Discover our top-rated courses across various categories. From coding and design to business and wellness, our courses are crafted to deliver results.
         </p>
 
@@ -46,7 +32,7 @@ const CoursesSection = () => {
         <Link
           to={'/course-list'}
           onClick={() => scrollTo(0, 0)}
-          className="text-white border border-white px-10 py-3 rounded hover:bg-white hover:text-black transition"
+          className="text-blue-700 border border-blue-700 px-10 py-3 rounded hover:bg-blue-700 hover:text-white transition"
         >
           Show all courses
         </Link>

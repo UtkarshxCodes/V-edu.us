@@ -8,7 +8,8 @@ import TestimonialsSection from '../../components/student/TestimonialsSection';
 import CallToAction from '../../components/student/CallToAction';
 import StepsSection from '../../components/student/StepsSection';
 import ErrorBoundary from "../../components/student/ErrorBoundary";
-import Navbar from '../../components/student/Navbar'; // Make sure you import Navbar
+import Navbar from '../../components/student/Navbar';
+import { assets } from '../../assets/assets';
 
 const Home = () => {
   const jobsRef = useRef(null);
@@ -30,16 +31,28 @@ const Home = () => {
         <ErrorBoundary>
           <Companies />
         </ErrorBoundary>
-        {/* Attach the ref here */}
         <div ref={jobsRef}>
           <JobPostingSection />
         </div>
         <CoursesSection />
-        <StepsSection />
-        <TestimonialsSection />
-        <CallToAction />
-        <Footer />
       </div>
+      {/* New Video Section */}
+      <section className="relative w-full h-[400px] flex items-center justify-center bg-black">
+        <video
+          className="w-auto h-full max-w-full object-contain"
+          src={assets.videolms}
+          autoPlay
+          loop
+          muted
+          playsInline
+        ></video>
+        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+      </section>
+      {/* Other sections below the video */}
+      <StepsSection />
+      <TestimonialsSection />
+      <CallToAction />
+      <Footer />
     </>
   );
 };
